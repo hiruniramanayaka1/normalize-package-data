@@ -53,6 +53,7 @@ jobs:
         with:
           node-version: 26.x
           check-latest: contains('26.x', '.x')
+          cache: npm
       - name: Install Latest npm
         uses: ./.github/actions/install-latest-npm
         with:
@@ -137,6 +138,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           check-latest: contains(matrix.node-version, '.x')
+          cache: npm
       - name: Install Latest npm
         if: ${{ !startsWith(matrix.node-version, '22.') }}
         uses: ./.github/actions/install-latest-npm
